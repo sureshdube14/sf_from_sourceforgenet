@@ -90,7 +90,7 @@ if (typeof bonzai_testadid != 'undefined' && bonzai_testadid != "") {
         if ((req.readyState == 'loaded' || req.readyState == 'complete') && !iescriptready) {
             iescriptready = true;
             scriptLoaded = true;
-            if (typeof(loadAd) === "function") loadAd('', '{"adid":["61c8b143-8e3c-4279-9cc5-241293bca3c3"],"contTyp":["div"],"q":["1299740195"],"tk":["7f7ac481e1698846f91d117b03c854e"]}');
+            if (typeof(loadAd) === "function"){loadAd('', '{"adid":["61c8b143-8e3c-4279-9cc5-241293bca3c3"],"contTyp":["div"],"q":["1299740195"],"tk":["7f7ac481e1698846f91d117b03c854e"]}')};
             var preimp = new Image();
             preimp.src = cUrl + '/rec?evt=preimp&tk=' + tk + '&ad=' + adid;
 			console.log('preimp.src='+preimp.src);
@@ -108,12 +108,13 @@ if (typeof bonzai_testadid != 'undefined' && bonzai_testadid != "") {
         }
     };
 	//alert('step 5');
-    req.onload = function() {
-	//function scriptOnLoadCallback() {
+  //  req.onload = function() {
+	function scriptOnLoadCallback() {
+        alert('scriptOnLoadCallback');
 		console.log('scriptOnLoadCallback - 1');
         scriptLoaded = true;
 		console.log('scriptOnLoadCallback - 2');
-        if (typeof(loadAd) === "function") loadAd('', '{"adid":["61c8b143-8e3c-4279-9cc5-241293bca3c3"],"contTyp":["div"],"q":["1299740195"],"tk":["7f7ac481e1698846f91d117b03c854e"]}');
+        if (typeof(loadAd) === "function"){alert("load ad called");  loadAd('', '{"adid":["61c8b143-8e3c-4279-9cc5-241293bca3c3"],"contTyp":["div"],"q":["1299740195"],"tk":["7f7ac481e1698846f91d117b03c854e"]}')};
         var preimp = new Image();
         preimp.src = cUrl + '/rec?evt=preimp&tk=' + tk + '&ad=' + adid;
 		console.log('preimp.src='+preimp.src);

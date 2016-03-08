@@ -102,8 +102,10 @@ if (typeof bonzai_testadid != 'undefined' && bonzai_testadid != "") {
     req.onload = function() {
 		//console.log('req.onload starts');
         scriptLoaded = true;
+        alert("onload called");
 		//console.log('req.onload 1');
         if (typeof(loadAd) === "function") {
+            alert("loadad called");
 			//console.log('typeof(loadAd) is function');
 			loadAd('1663d075-656a-48de-a4d1-2cbbe2b4044d_0', '{"sn":["wap_bonzai"],"adid":["1663d075-656a-48de-a4d1-2cbbe2b4044d"],"scriptid":["bonzai_script_0"],"contTyp":["div"],"tk":["d0871ec478fd12b158f5e77972d58ac3"]}');
 		}
@@ -126,7 +128,7 @@ if (typeof bonzai_testadid != 'undefined' && bonzai_testadid != "") {
 		console.log('req.onload 4');
     };
     //var surl = "http://d3m98duogo0w61.cloudfront.net/1663d075-656a-48de-a4d1-2cbbe2b4044d_1456152586362_script.js";
-	var surl = "../../bonzai_trials/local_banner.js";
+	var surl = "../../bonzai_trials/ad_js_with_backtick.js";
     //if (window.location.protocol == "https:") {
         surl = surl.replace("http://massets.bonzai.ad", "https://d306vfj3mhm2bb.cloudfront.net");
     //}
